@@ -1,0 +1,16 @@
+{
+  "name": "react-bill-payment-app",
+  "version": "1.0.0",
+  "description": "A bill payment app built with Raect, Express, Tailwind, Node and MongoDB as part of the requirements for the award of a diploma in Software Engineering",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/ server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
