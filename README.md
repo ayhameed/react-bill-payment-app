@@ -20,6 +20,6 @@ A bill payment app built with Raect, Express, Tailwind, Node and MongoDB as part
 - there's an env file located in server/ thats not on github, this contains the configurations to MongoDB 
 - You may need to update the cors config in client/server.js 
 - Flutter Wave SDK V3 is used for bill payment : 
--- https://developer.flutterwave.com/docs/making-payments/bill-payments [Flutterwave Bill payment DOC]
--- https://developer.flutterwave.com/docs/integration-guides/authentication [Flutter Wave Auth DOC]
+- -  https://developer.flutterwave.com/docs/making-payments/bill-payments [Flutterwave Bill payment DOC]
+- - https://developer.flutterwave.com/docs/integration-guides/authentication [Flutter Wave Auth DOC]
 - ReadMe file is updated once updates are added 
