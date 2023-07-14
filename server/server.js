@@ -3,7 +3,10 @@ const path = require("path");
 const express = require("express");
 const cors = require('cors');
 const mongoose = require('mongoose');
+
+//routes
 const signupRouter = require('./routes/signup');
+const loginRouter = require('./routes/login');
 
 require('dotenv').config();
 
@@ -43,8 +46,12 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-// Handle Get requests to /api/signuproutes
+// Handle POST requests to /api/signup
 app.use('/api', signupRouter);
+
+// Handle POST requests to /api/login
+app.use('/api', loginRouter);
+
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
