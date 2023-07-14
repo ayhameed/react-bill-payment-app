@@ -1,22 +1,25 @@
 import React from "react";
-import logo from "./logo.svg";
+import Header from "./components/Header";
+import HomeTabs from "./components/HomeTabs";
 import "./App.css";
+import "./index.css";
 
 function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch("http://localhost:3001/api")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => {
+        setData(data.message);
+        console.log(data);
+      });
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+      <Header />
+      <HomeTabs />
     </div>
   );
 }
