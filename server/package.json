@@ -18,7 +18,9 @@
     "dotnet": "^1.1.4",
     "express": "^4.18.2",
     "flutterwave-node-v3": "^1.1.6",
+    "got": "^13.0.0",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.3.4"
+    "mongoose": "^7.3.4",
+    "node-fetch": "^2.6.12"
   }
 }

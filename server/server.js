@@ -4,9 +4,14 @@ const express = require("express");
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+// 
+const Flutterwave = require('flutterwave-node-v3');
+
 //routes
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
+const buyAirtimeRouter = require('./routes/buyAirtime');
+
 
 require('dotenv').config();
 
@@ -20,6 +25,10 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 //setup MongoDB
 const dbConnectionString = process.env.DB_CONNECTION_STRING;
+
+//setup Flutter Wave
+const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+
 
 mongoose.connect(dbConnectionString, {
   useNewUrlParser: true,
@@ -52,6 +61,8 @@ app.use('/api', signupRouter);
 // Handle POST requests to /api/login
 app.use('/api', loginRouter);
 
+// Mount the route
+app.use('/api', buyAirtimeRouter);
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
