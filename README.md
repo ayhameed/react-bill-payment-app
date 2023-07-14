@@ -22,4 +22,5 @@ A bill payment app built with Raect, Express, Tailwind, Node and MongoDB as part
 - Flutter Wave SDK V3 is used for bill payment : 
     -  https://developer.flutterwave.com/docs/making-payments/bill-payments [Flutterwave Bill Payment DOC]
     - https://developer.flutterwave.com/docs/integration-guides/authentication [Flutterwave Auth DOC]
+- 'got' used in flutterwave's documentation does not seem to work without modifications,so I  replaced  it with 'node-fetch' for https request.
 - ReadMe file is updated once updates are added 
