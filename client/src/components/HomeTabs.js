@@ -2,13 +2,14 @@ import React from "react";
 
 function HomeTabs() {
   return (
-    <div className="flex">
+    <div className="flex mt-24">
       <div className="w-1/3"></div> {/* Left column */}
       <div className="w-1/3">
         {/* Middle column - Place your tab codes here */}
         <header>
           {/* <link href="/dist/output.css" rel="stylesheet" /> */}
         </header>
+        {/* TODO: I want 3 equal coloums */}
         <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
           <ul className="flex flex-wrap -mb-px">
             <li className="mr-4">
