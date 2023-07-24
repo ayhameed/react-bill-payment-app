@@ -3,7 +3,6 @@ function Header() {
       <header>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/dist/output.css" rel="stylesheet" />
         <nav className="bg-white  fixed w-full z-20 top-0 left-0 border-b">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="https://digibillz.com" className="flex items-center">

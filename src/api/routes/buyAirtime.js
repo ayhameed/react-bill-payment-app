@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch =  require('node-fetch');
 
-const flw = require('flutterwave-node-v3');
+const flw = require('flutterwave-react-v3');
 const verifyToken = require('../middleware/verifyToken');
 const Transaction = require('../models/Transaction');
 

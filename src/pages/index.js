@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "./components/Header";
-import HomeTabs from "./components/HomeTabs";
-import "./App.css";
-import "./index.css";
+import '../globals.css'; // Import the globals.css file
+import Header from "../components/Header";
+import HomeTabs from "../components/HomeTabs";
 
-function App() {
+const Home = () => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/api")
+    fetch("/api/hello")
       .then((res) => res.json())
       .then((data) => {
         setData(data.message);
@@ -17,11 +16,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <Header />
       <HomeTabs />
     </div>
   );
-}
+};
 
-export default App;
+export default Home;

@@ -5,9 +5,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 // 
-const Flutterwave = require('flutterwave-node-v3');
+const Flutterwave = require('flutterwave-react-v3');
 
 //routes
+// Import the hello route handler
+const helloHandler = require('./routes/hello');
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
 const buyAirtimeRouter = require('./routes/buyAirtime');
@@ -27,7 +29,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 const dbConnectionString = process.env.DB_CONNECTION_STRING;
 
 //setup Flutter Wave
-const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+// const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
 
 
 mongoose.connect(dbConnectionString, {
@@ -49,6 +51,9 @@ app.use(cors({
   origin: 'http://localhost:3000',
 }));
 
+// Handle GET requests to /api/routes/hello
+app.get('/hello', helloHandler);
+
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
   console.log("Hello from route /api");
@@ -56,18 +61,14 @@ app.get("/api", (req, res) => {
 });
 
 // Handle POST requests to /api/signup
-app.use('/api', signupRouter);
+app.use('/signup', signupRouter);
 
 // Handle POST requests to /api/login
-app.use('/api', loginRouter);
+app.use('/login', loginRouter);
 
 // Mount the route
-app.use('/api', buyAirtimeRouter);
+app.use('/buyairtime', buyAirtimeRouter);
 
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

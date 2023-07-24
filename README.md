@@ -1,26 +1,21 @@
 # react-bill-payment-app
-A bill payment app built with Raect, Express, Tailwind, Node and MongoDB as part of the requirements for the award of a diploma in Software Engineering
+A bill payment app built with NextJS, Express, Tailwind, Node and MongoDB 
 
 ## Setup this APP
 ### React app build with JSX and Tailwind for Styling:
-- cd /client
+- cd /
 - npm install 
-- npm start 
-
+- npm run build
+- npm run dev
 ### Server (Express):
-- cd /server
-- npm install
-- nodemon server.js
+- open a new terminal
+- cd /
+- npm src/api/server.js
 
 ### Datebase (MongoDB Atlas):
 - A managed cloud instance of mongo DB 
 - Schema has been added (without data):wq
 
 ### Notes:
-- there's an env file located in server/ thats not on github, this contains the configurations to MongoDB 
-- You may need to update the cors config in client/server.js 
-- Flutter Wave SDK V3 is used for bill payment : 
-    -  https://developer.flutterwave.com/docs/making-payments/bill-payments [Flutterwave Bill Payment DOC]
-    - https://developer.flutterwave.com/docs/integration-guides/authentication [Flutterwave Auth DOC]
-- 'got' used in flutterwave's documentation does not seem to work without modifications,so I  replaced  it with 'node-fetch' for https request.
+- I am currently migrating from CRA to Next and as such most of the end points are currently not working
 - ReadMe file is updated once updates are added 
